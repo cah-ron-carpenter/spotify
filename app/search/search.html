@@ -1,0 +1,51 @@
+<p>This is the partial for view 1.</p>
+
+<p>
+    <form ng-submit="search()">
+        <input type="submit" value="Search" ng-click="search()"><input type="text" ng-model="searchValue" />
+    </form>
+</p>
+<div>
+    <label>
+        <input type="radio" ng-model="searchType" value="artist" ng-click="changeRadio()">
+        Artist
+    </label><br/>
+    <label>
+        <input type="radio" ng-model="searchType" value="album" ng-click="changeRadio()">
+        Album
+    </label><br/>
+    <label>
+        <input type="radio" ng-model="searchType" value="track" ng-click="changeRadio()">
+        Song
+    </label><br/>
+    <label>
+        <input type="radio" ng-model="searchType" value="playlist" ng-click="changeRadio()">
+        Playlist
+    </label><br/>
+</div>
+<div ng-if="searchType == 'album'">
+    <div id="albumResults" class="isotope"  ng-repeat="searchResult in searchResults" >
+        <a ng-href="index.html#/albumDetails/{{searchResult.id}}"><img ng-src="{{searchResult.images.length > 0 ? searchResult.images[0].url : 'imagenotfound.png';}}"></a>
+        <p>{{searchResult.name}}</p>
+    </div>
+</div>
+
+<div ng-if="searchType == 'artist'">
+    <div id="artistResults" class="isotope"  ng-repeat="searchResult in searchResults" >
+        <div ng-if="searchResult.images.length > 0"><a ng-href="index.html#/artistDetails/{{searchResult.id}}"><img ng-src="{{searchResult.images[0].url;}}"></a></div>
+        <p>{{searchResult.name}}</p>
+    </div>
+</div>
+
+<div ng-if="searchType == 'track'">
+    <div id="trackResults" class="isotope"  ng-repeat="searchResult in searchResults" >
+        <p>{{searchResult.name}} - {{searchResult.artists[0].name}}</p>
+    </div>
+</div>
+
+<div ng-if="searchType == 'playlist'">
+    <div id="playlistResults" class="isotope"  ng-repeat="searchResult in searchResults" >
+        <a ng-href="index.html#/playlistDetails/{{searchResult.id}}"><img ng-src="{{searchResult.images.length > 0 ? searchResult.images[0].url : 'imagenotfound.png';}}"></a>
+        <p>{{searchResult.owner.id}} - {{searchResult.name}}</p>
+    </div>
+</div>

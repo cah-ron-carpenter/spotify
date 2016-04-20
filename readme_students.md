@@ -17,7 +17,7 @@ Desired functionality:
 * Display results of artists, albums, songs (be creative with this)
 * Be able to display the available artwork/images with those results (consider using frameworks like masonry or isotope)
 * Ability to sort the results (maybe by popularity, name, relevance, etc.)
-* Create playlists of songs
+* Create and maintain playlists of songs and store them in a datastore
 
 Setup steps:
 
