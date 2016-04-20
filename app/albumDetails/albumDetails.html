@@ -1,0 +1,6 @@
+<div id="albumDetails">
+    <p>{{album.artists[0].name}}</p><div ng-if="album.images.length > 1"><img src="{{album.images[1].url}}"></div>
+    <div id="tracks" ng-repeat="track in tracks">
+        <p><a href="{{track.preview_url}}"><img ng-src="images/playButtonSmall.png"></a> {{track.name}} - {{millisToMinutesAndSeconds(track.duration_ms)}}</p>
+    </div>
+</div>

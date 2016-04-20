@@ -1,0 +1,32 @@
+Notes:
+
+Go over MVC
+Model/DataModel - View - Controller
+The model is our data, the stuff we want to minpulate and eventually display on the page
+The view is what the user sees, it is the page, the interface
+The job of the controller is to manipulate the data and build the data for the view, it is the logic for what is happening behind the scenes
+
+With this structure, we have a separation of concerns
+
+In angular, the model is the data attached to the scope object that is passed in to the controller
+
+
+Go over source control?
+
+Go over TDD?
+
+Promises
+When something returns a promise, like angular's http service, it essentially passes off for asynchronous execution. Since it is asynchronous, you can't use the stuff you get back from the call immediately, so the promise enables you to specify what happens when the execution has finished. promise.then(function() {})
+
+
+To inject $http and scope into the controller, do it like so: 
+.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {}])
+
+then, within you can make http calls as follows:
+$http.get(searchURL + queryString)
+      .then(function(response) {
+          window.something = response;
+      });
+
+
+
