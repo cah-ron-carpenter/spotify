@@ -1,0 +1,11 @@
+div#search-box, div#search-type {
+    text-align: center;
+}
+
+div#search-box input[type=text] {
+    width: 88%;
+}
+
+div#search-box input[type=submit] {
+    width: 10%;
+}
