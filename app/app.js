@@ -11,7 +11,6 @@ angular.module('myApp', [
     'myApp.version'
 ]).config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-        .when('/search', {controller: 'search', templateUrl: 'search/search.html', css: 'search/search.css'})
         .otherwise({redirectTo: '/search'});
 }]).directive('head', ['$rootScope', '$compile',
     function ($rootScope, $compile) {
