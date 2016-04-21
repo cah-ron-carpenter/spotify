@@ -1,4 +1,13 @@
 /* app css stylesheet */
+body {
+  margin: 1em auto;
+  max-width: 50em;
+}
+
+#header
+{
+  font-size: 2em;
+}
 
 .menu {
   list-style: none;
