@@ -9,3 +9,19 @@ div#search-box input[type=text] {
 div#search-box input[type=submit] {
     width: 10%;
 }
+
+.result {
+    text-align: left;
+}
+
+.result img {
+    display: inline-block;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+    margin: .5em;
+}
+
+.title {
+    display: inline-block;
+}
