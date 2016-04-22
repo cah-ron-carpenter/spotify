@@ -8,3 +8,8 @@ body {
     border-bottom: 0.1em solid black;
     font-size: 2em;
 }
+
+#header a {
+    text-decoration: none;
+    color: black;
+}
