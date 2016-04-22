@@ -1,0 +1,27 @@
+.result {
+    text-align: left;
+}
+
+.result img {
+    display: inline-block;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+    margin: .5em;
+}
+
+.title {
+    display: inline-block;
+}
+
+.artistMain img {
+    display: inline-block;
+    max-width: 100px;
+    width: auto;
+    height: auto;
+    margin: .5em;
+}
+
+.artistMain {
+    border-bottom: 0.1em solid black;
+}

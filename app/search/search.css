@@ -1,0 +1,27 @@
+div#search-box, div#search-type {
+    text-align: center;
+}
+
+div#search-box input[type=text] {
+    width: 88%;
+}
+
+div#search-box input[type=submit] {
+    width: 10%;
+}
+
+.result {
+    text-align: left;
+}
+
+.result img {
+    display: inline-block;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+    margin: .5em;
+}
+
+.title {
+    display: inline-block;
+}
