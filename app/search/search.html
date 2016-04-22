@@ -39,7 +39,10 @@
 
 <div class="result" ng-if="searchType == 'track'">
     <div id="trackResults" class="isotope" ng-repeat="searchResult in searchResults">
-        <p>{{searchResult.name}} - {{searchResult.artists[0].name}}</p>
+        <a ng-href="index.html#/albumDetails/{{searchResult.album.id}}">
+            <img ng-src="{{searchResult.album.images.length > 0 ? searchResult.album.images[0].url : 'imagenotfound.png';}}"></a>
+        <span><a href="{{searchResult.preview_url}}"><img ng-src="images/playButtonSmall.png"></a></span>
+        <span>{{searchResult.name}} - <a ng-href="index.html#/artistDetails/{{searchResult.artists[0].id}}">{{searchResult.artists[0].name}}</a> - {{searchResult.album.name}}</span>
     </div>
 </div>
 
