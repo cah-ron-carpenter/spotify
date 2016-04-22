@@ -1,3 +1,12 @@
 <div id="artistDetails">
-    <p>{{artist.name}}</p><div ng-if="artist.images.length > 1"><img ng-src="{{artist.images[1].url}}"></div>
+    <div class="artistMain" ng-if="artist.images.length > 1"><img ng-src="{{artist.images[1].url}}">
+        <span class="title">{{artist.name}}</span></div>
+    <div class="result">
+        <span class="title">Albums</span>
+        <div id="albumResults" ng-repeat="album in albums">
+            <a ng-href="index.html#/albumDetails/{{album.id}}">
+                <img ng-src="{{album.images.length > 0 ? album.images[0].url : 'imagenotfound.png';}}"></a>
+            <span class="title">{{album.name}}</span>
+        </div>
+    </div>
 </div>
