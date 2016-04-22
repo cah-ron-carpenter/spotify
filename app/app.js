@@ -4,7 +4,6 @@
 angular.module('myApp', [
     'ngRoute',
     'myApp.search',
-    'myApp.view2',
     'myApp.albumDetails',
     'myApp.artistDetails',
     'myApp.playlistDetails',
