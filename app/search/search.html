@@ -1,9 +1,36 @@
 <p>this is the search view</p>
 
-<input> </<input type="text">
-<button> Search </button>
+<input type="text" name="Input" ng-model="searchValue">
+<input type="submit" name="find" ng-click="search()">
 
-<br><br> <input type="radio" name="Artists"> Artists
-<input type="radio" name="Albums"> Albums
-<input type="radio" name="Songs"> Songs
-<input type="radio" name="Playlists"> Playlists
+<br><br> <input type="radio" value="artist" ng-model="searchType"> Artists
+<input type="radio" value="album" ng-model="searchType"> Albums
+<input type="radio" value="track" ng-model="searchType"> Songs
+<input type="radio" value="playlist" ng-model="searchType"> Playlists
+
+<div class="result" ng-if="searchType == 'artist'">
+    <div id="artistResults" class="isotope" ng-repeat="searchResult in searchResults">
+        <div ng-if="searchResult.images.length > 0"><a ng-href="index.html#/artistDetails/{{searchResult.id}}">
+            <img ng-src="{{searchResult.images[0].url;}}" style="width:400px;height:400px;"></a>
+            <span class="title">{{searchResult.name}}</span>
+        </div>
+    </div>
+</div>
+
+<div class="result" ng-if="searchType == 'album'">
+    <div id="albumResults" class="isotope" ng-repeat="searchResult in searchResults">
+        <div ng-if="searchResult.images.length > 0"><a ng-href="index.html#/albumDetails/{{searchResult.id}}">
+            <img ng-src="{{searchResult.images[0].url;}}"></a>
+            <span class="title">{{searchResult.name}}</span>
+        </div>
+    </div>
+</div>
+
+<div class="result" ng-if="searchType == 'track'">
+    <div id="trackResults" class="isotope" ng-repeat="searchResult in searchResults">
+        <div ng-if="searchResult.images.length > 0"><a ng-href="index.html#/albumDetails/{{searchResult.id}}">
+            <img ng-src="{{searchResult.images[0].url;}}"></a>
+            <span class="title">{{searchResult.name}}</span>
+        </div>
+    </div>
+</div>
