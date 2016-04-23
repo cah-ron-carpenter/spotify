@@ -1,0 +1,60 @@
+<body>
+    <p></p>
+
+    <input type="text" name="Input" ng-model="searchValue">
+    <input type="submit" name="find" ng-click="search()">
+
+    <br><br> <input type="radio" value="artist" ng-model="searchType"> Artists
+    <input type="radio" value="album" ng-model="searchType"> Albums
+    <input type="radio" value="track" ng-model="searchType"> Songs
+    <input type="radio" value="playlist" ng-model="searchType"> Playlists
+
+    <section>
+        <div class="result" ng-if="searchType == 'artist'">
+            <div id="artistResults" class="isotope" ng-repeat="searchResult in searchResults">
+                <div ng-if="searchResult.images.length > 0"><a ng-href="index.html#/artistDetails/{{searchResult.id}}">
+                    <img ng-src="{{searchResult.images[0].url;}}" style="width:400px;height:400px;"></a>
+                    <span class="title">{{searchResult.name}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="result" ng-if="searchType == 'album'">
+            <div id="albumResults" class="isotope" ng-repeat="searchResult in searchResults">
+                <div ng-if="searchResult.images.length > 0"><a ng-href="index.html#/albumDetails/{{searchResult.id}}">
+                    <img ng-src="{{searchResult.images[0].url;}}"></a>
+                    <span class="title">{{searchResult.name}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="result" ng-if="searchType == 'track'">
+            <div id="trackResults" class="isotope" ng-repeat="searchResult in searchResults">
+                <a ng-href="{{searchResult.preview_url}}">
+                    <img ng-src="{{searchResult.album.images.length > 0 ? searchResult.album.images[0].url : 'imagenotfound.png';}}"></a>
+                <span>{{searchResult.name}} - <a ng-href="index.html#/artistDetails/{{searchResult.artists[0].id}}">{{searchResult.artists[0].name}}</a> - {{searchResult.album.name}}</span>
+            </div>
+        </div>
+
+        <div class="result" ng-if="searchType == 'playlist'">
+            <div id="playlistResults" class="isotope" ng-repeat="searchResult in searchResults">
+                <div ng-if="searchResult.images.length > 0"><a ng-href="index.html#/playlistDetails/{{searchResult.id}}">
+                    <img ng-src="{{searchResult.images[0].url;}}"></a>
+                    <span class="title">{{searchResult.name}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<style>
+
+    body{
+        text-align: center;
+        color: green;
+        background-color: black;
+        padding: 10px;
+        font-size: 2em;
+    }
+</style>
